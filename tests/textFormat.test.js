@@ -7,5 +7,9 @@ describe('textFormat ', () => {
             const fileOne = '../../src/lib/utils.js'
             assert.strictEqual(textFormat.parseFilePathToName(fileOne), 'utils')
         })
+        it(' can handle a filename with a period in it ', () => {
+            const fileOne = '../../src/lib/utils.foo.js'
+            assert.strictEqual(textFormat.parseFilePathToName(fileOne), 'utils.foo')
+        })
     })
 })
