@@ -61,6 +61,7 @@ describe('logging utility functions', () => {
             const revert = logging.__set__('console', consoleMock)
 
             logging.consoleChange({ some: 'random object' })
+            sinon.assert.calledWith(console.log, 'Duplicate entry found:')
             sinon.assert.calledTwice(console.log)
             
             revert()
