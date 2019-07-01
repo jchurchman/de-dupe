@@ -12,4 +12,17 @@ describe('textFormat ', () => {
             assert.strictEqual(textFormat.parseFilePathToName(fileOne), 'utils.foo')
         })
     })
+
+    describe(' strikeThrough ', () => {
+        it('doubles the length of a string ', () => {
+            const string = 'foo'
+            assert.strictEqual(textFormat.strikeThrough(string).length, string.length * 2)
+        })
+        it('appends a unicode strike character (u0336) after each letter ', () => {
+            const string = 'quuux'
+            const formattedString = textFormat.strikeThrough(string)
+            const allTheStrikes = formattedString.split('').filter(char => char !== '\u0336')
+            assert.strictEqual(string.length, allTheStrikes.length)
+        })
+    })
 })
