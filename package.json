@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "code challenge for marketo position",
   "main": "index.js",
+  "engines": {
+    "node": "8.x"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests --recursive",
+    "test-watch": "mocha tests --recursive --watch"
   },
   "repository": {
     "type": "git",
@@ -13,6 +17,10 @@
   "author": "Joe Churchman <churchman.joe@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "chai": "^4.2.0"
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
   }
 }
